@@ -356,7 +356,20 @@ $("#ex").append(output);
      localStorage.setItem("unsaved",JSON.stringify(prac));
      console.log(timestamp);
 
+       /*
+    * by NK to download as file
 
+     */
+     var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(JSON.stringify(prac)));
+  element.setAttribute('download', name+'_'+date+'.txt');
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+  element.focus();
+  element.click();
+
+  document.body.removeChild(element);
 
 
 
