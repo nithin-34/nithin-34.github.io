@@ -972,7 +972,11 @@ function test() {
      */
      var element = document.createElement('a');
   element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(JSON.stringify(prac)));
-  element.setAttribute('download', name+'_'+date+'.txt');
+         var today = new Date();
+var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
+var time = today.getHours() + ":" + today.getMinutes();
+var dateTime = date+'_'+time;
+  element.setAttribute('download', name+'_'+dateTime+'.txt');
 
   element.style.display = 'none';
   document.body.appendChild(element);
