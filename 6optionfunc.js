@@ -363,12 +363,10 @@ $("#ex").append(output);
      var element = document.createElement('a');
   element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(JSON.stringify(prac)));
 var today = new Date();
-
-var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-
-var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-
+var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
+var time = today.getHours() + ":" + today.getMinutes();
 var dateTime = date+'_'+time;
+        
   element.setAttribute('download', name+'_'+dateTime+'.txt');
 
   element.style.display = 'none';
